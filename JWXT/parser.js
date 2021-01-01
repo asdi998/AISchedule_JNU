@@ -8,7 +8,7 @@ function scheduleHtmlParser(html) {
     let wpatt = /([1-9][0-9]?)至([1-9][0-9]?)/
     let ppatt = /[(]?[校南华珠深][本校文海圳][部区学校][院区)]?/
 
-    let table = $('table:not(:has(table))', '#oReportCell').last().find('tr')
+    let table = $(html).find('tr')
     let sectionTable = table[2].children
 
     for (let u = 1; u < sectionTable.length; u++) {
