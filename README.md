@@ -8,7 +8,7 @@
 - JWXK - 教务选课系统 - 11422
 
 文件夹内的文件:
-- provider.js 获取当前页面的所有html代码
+- provider.js 提取当前页面的html内容
 - parser.js 从html中解析出课程数据
 
 详情可查看小爱课程表的开发者文档
