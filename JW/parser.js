@@ -4,15 +4,17 @@ function scheduleHtmlParser(html) {
     let kpatt = /[0-9]{8}&nbsp;(.*)\[[0-9]{2}\]/
     let wspatt = /([1-9][0-9]?)-([1-9][0-9]?)/
 
-    let bbb = $('#kcb_container .mtt_arrange_item')
+    let bbb = $('.mtt_arrange_item')
 
     for (let u = 0; u < bbb.length; u++) {
         let re = { sections: [], weeks: [] }
 
         let kcmc = $($(bbb[u]).find('.mtt_item_kcmc')).text()
+        let teacher = $($(bbb[u]).find('.mtt_item_jxbmc')).text()
         let room = $($(bbb[u]).find('.mtt_item_room')).text().split(',')
 
         re.name = kpatt.exec(kcmc)[1]
+        re.teacher = teacher
         re.day = room[1].replace('星期', '')
         re.position = room[3]
 
